@@ -1,0 +1,389 @@
+/* ==========================================================================
+   Variables de couleurs & Typographie
+   ========================================================================== */
+:root {
+    --primary-color: #ff6b6b; /* Rouge corail doux */
+    --secondary-color: #4ecdc4; /* Turquoise enfantin */
+    --accent-yellow: #ffe66d; /* Jaune soleil */
+    --purple-sky: #a29bfe; /* Violet pastel doux */
+    --text-dark: #2d3436;
+    --bg-light: #f7f9fc;
+    --white: #ffffff;
+    --font-heading: "Fredoka", cursive, sans-serif;
+    --font-body: "Quicksand", sans-serif;
+}
+
+/* ==========================================================================
+   Styles Généraux
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Arrière-plan & Animations Enfantines
+   ========================================================================== */
+.sky-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 5rem;
+    animation: floatCloud 25s linear infinite;
+}
+
+.cloud-1 {
+    top: 10%;
+    left: -10%;
+    animation-duration: 30s;
+}
+.cloud-2 {
+    top: 35%;
+    left: -15%;
+    animation-duration: 22s;
+    animation-delay: 5s;
+}
+.cloud-3 {
+    top: 65%;
+    left: -20%;
+    animation-duration: 28s;
+    animation-delay: 2s;
+}
+
+@keyframes floatCloud {
+    0% {
+        transform: translateX(-10vw);
+    }
+    100% {
+        transform: translateX(110vw);
+    }
+}
+
+.star {
+    position: absolute;
+    font-size: 1.8rem;
+    animation: sparkle 3s ease-in-out infinite alternate;
+}
+
+.star-1 {
+    top: 15%;
+    right: 10%;
+    animation-delay: 0.5s;
+}
+.star-2 {
+    top: 40%;
+    left: 8%;
+    animation-delay: 1.2s;
+}
+.star-3 {
+    top: 70%;
+    right: 15%;
+    animation-delay: 0.2s;
+}
+
+@keyframes sparkle {
+    0% {
+        transform: scale(0.8) rotate(0deg);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1.2) rotate(15deg);
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   En-tête / Hero Section
+   ========================================================================== */
+.hero {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, #74b9ff, #a29bfe);
+    color: var(--white);
+    text-align: center;
+    padding: 80px 20px 60px 20px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.badge-tag {
+    display: inline-block;
+    background-color: var(--accent-yellow);
+    color: var(--text-dark);
+    font-family: var(--font-heading);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transform: rotate(-2deg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    font-weight: 500;
+}
+
+.cta-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Boutons */
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    padding: 18px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+    transform: translateY(-4px) scale(1.03);
+    background-color: #ff5252;
+    box-shadow: 0 12px 25px rgba(255, 107, 107, 0.6);
+}
+
+/* Animation de battement du bouton */
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.04);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.file-info {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   Section Galerie / Cartes
+   ========================================================================== */
+.preview-section {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.preview-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: #6c5ce7;
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #636e72;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    border: 3px solid #fdcb6e;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #636e72;
+}
+
+/* ==========================================================================
+   Section Avantages
+   ========================================================================== */
+.benefits-section {
+    position: relative;
+    z-index: 1;
+    background-color: #e3f2fd;
+    padding: 60px 20px;
+    margin-top: 40px;
+}
+
+.benefits-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.benefits-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: #0984e3;
+    margin-bottom: 30px;
+}
+
+.benefits-list {
+    list-style: none;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.benefits-list li {
+    background: var(--white);
+    padding: 18px 25px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.benefits-list i {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+}
+
+/* ==========================================================================
+   Call to action final & Footer
+   ========================================================================== */
+.final-cta {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 70px 20px;
+    background: var(--white);
+}
+
+.rainbow-bar {
+    height: 8px;
+    width: 120px;
+    margin: 0 auto 30px auto;
+    background: linear-gradient(
+        to right,
+        #ff7675,
+        #ffeaa7,
+        #55efc4,
+        #74b9ff,
+        #a29bfe
+    );
+    border-radius: 10px;
+}
+
+.final-cta h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.final-cta p {
+    font-size: 1.1rem;
+    color: #636e72;
+    margin-bottom: 30px;
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    box-shadow: 0 8px 20px rgba(78, 205, 196, 0.4);
+}
+
+.secondary-btn:hover {
+    background-color: #38b6ad;
+    box-shadow: 0 12px 25px rgba(78, 205, 196, 0.6);
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+    background-color: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+    .subtitle {
+        font-size: 1.05rem;
+    }
+    .btn-download {
+        font-size: 1.1rem;
+        padding: 15px 28px;
+    }
+}
